@@ -2,14 +2,14 @@
   'use strict';
 
   angular
-    .module('app', ['ngRoute', 'brewery', 'customer'])
+    .module('customer')
     .config(Config);
 
   function Config($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'app/app.html',
-        controller: 'AppController',
+      .when('/customers', {
+        templateUrl: 'customer/customer.html',
+        controller: 'CustomerController',
         controllerAs: 'vm'
       });
   }
