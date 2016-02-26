@@ -52,7 +52,7 @@
     }
 
     vm.remove = function(customer) {
-      if (confirm('Confirma a remoção da cervejaria ' + customer.name + '?')) {
+      if (confirm('Confirma a remoção do cliente ' + customer.name + '?')) {
         CustomerService.remove(customer._id).then(function(response) {
           vm.success = response.data;
           vm.findAll();
