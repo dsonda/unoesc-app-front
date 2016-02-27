@@ -5,7 +5,7 @@
     .module('customer')
     .service('CustomerService', CustomerService);
 
-  BreweryService.$inject = ['API','$http'];
+  CustomerService.$inject = ['API','$http'];
 
   function CustomerService(API, $http) {
     this.findAll = function () {
