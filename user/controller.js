@@ -10,6 +10,25 @@
   function UserController(UserService) {
     var vm = this;
     vm.empty = {};
+    vm.roles = [
+      {
+        name: 'Admin',
+        value: 'admin'
+      },
+      {
+        name: 'User',
+        value: 'user'
+      }
+    ];
+
+    vm.toggleRoles = function(role) {
+      var index = vm.user.roles.indexOf(role);
+      if (index > -1) {
+        vm.user.roles.splice(index, 1);
+      } else {
+        vm.user.roles.push(role);
+      }
+    }
 
     vm.findAll = function() {
       UserService.findAll().then(function(response) {
@@ -18,7 +37,6 @@
         console.error(error);
       })
     }
-
     vm.findAll();
 
     vm.reset = function() {
