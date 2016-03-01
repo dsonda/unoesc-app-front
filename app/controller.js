@@ -5,9 +5,9 @@
     .module('app')
     .controller('AppController', AppController);
 
-  function AppController() {
-    var vm = this;
+  AppController.$inject = ['Storage','$location'];
 
-    vm.findAll()
+  function AppController(Storage, $location) {
+    var vm = this;
   }
 })();
